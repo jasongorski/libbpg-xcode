@@ -1,0 +1,168 @@
+BPG Image Encoder and Decoder
+-----------------------------
+
+1) Quick introduction
+---------------------
+
+- Edit the Makefile to change the compile options (the default compile
+  options should be OK for Linux). Type 'make' to compile and 'make
+  install' to install the compiled binaries.
+
+- x265 usage: for much increased compression speed (but lower
+  quality), you can compile and install x265 and then enable its use
+  in the Makefile. x265 supports by default only 8 bits per component
+  and does not support monochrome encoding yet (hence no alpha nor
+  grayscale images can be encoded with it).
+
+- Emscripten usage: in order to generate the Javascript decoder, you
+  must install Emscripten and enable its use in the Makefile.
+
+- An HTML demonstration (with a precompiled Javascript decoder) is
+  available in html/index.html (if you use Chrome and want to use
+  file:// to access it, launch Chrome with the option
+  --allow-file-access-from-files). 
+
+- The BPG file format is specified in doc/bpg_spec.txt.
+
+2) BPG encoder
+--------------
+
+The BPG command line encoder is 'bpgenc'. It takes JPEG or PNG images
+as input.
+
+- Speed: by default bpgenc uses the JCTVC encoder which has a high
+  quality but is slow. If you compiled with x265, you can have a much
+  faster encoding with the '-e x265' option. With x265 you can also
+  select the encoding speed with the '-m' option (1 = fast, but larger
+  image, 9 = slower but smaller image). Warning: x265 does not support
+  monochrome (and alpha) yet, so you must use the JCTVC encoder for
+  these cases.
+
+- Bit depth: the default bit depth is 8. You can increase it to 10
+  ('-b 10' option) to slightly increase the compression ratio. For web
+  publishing it is generally not a good idea because the Javascript
+  decoder uses more memory.
+
+- Lossless compression is supported as a bonus thru the HEVC lossless
+  capabilities. Use a PNG input in this case unless you know what you
+  do ! In case of a JPEG input, the compression is lossless related to
+  the JPEG YCbCr data, not the RGB data. In any case, the bit depth
+  should match the one of your picture otherwise the file size
+  increases a lot. By default the lossless mode sets the bit depth to
+  8 bits. The prefered color space is set to "rgb". Notes: 
+  
+    - lossless mode is less tested that the lossy mode but it usually
+      gives better results that PNG on photographic images.
+
+    - the JCTVC encoder gives smaller images than the x265 encoder
+      with lossless compression.
+
+- There is a difference of interpretation of the quantizer parameter
+  (-q option) between the x265 and JCTVC encoder. The default value is
+  optimized for the JCTVC encoder, not for x265. We will try to align
+  the x265 value to JCTVC in the future.
+
+- By default, the JCTVC encoder is limited to a precision of 12
+  bits. You can enable high bit depths (up to 14) by enabling the
+  Makefile define: USE_JCTVC_HIGH_BIT_DEPTH. The encoder is sligthly
+  slower in this case.
+
+- Color space and chroma format:
+
+    * For JPEG input, the color space of the input image is not
+      modified (it is YCbCr, RGB, YCbCrK or CMYK). The chroma is
+      subsampled according to the preferred chroma format ('-f'
+      option). Images with vertically subsampled chroma are currently
+      not supported.
+
+    * For PNG input, the input image is converted to the preferred
+      color space ('-c' option). Its chroma is then subsampled
+      according to the preferred chroma format.
+
+    * grayscale images are kept unmodified.
+
+- By default, bpgenc does not copy the metadata. You can copy them
+  with the '-keepmetadata' option. For JPEG input, EXIF, ICCP and XMP
+  are copied. For PNG input, ICCP is copied.
+
+3) BPG decoder
+--------------
+
+The BPG command line decoder is bpgdec. It outputs a PNG or PPM
+image. Use a PPM output to get the fastest speed.
+
+- With the '-i' option, you have information about the BPG image (and
+no decoded image is output).
+
+- The '-b' option selects the bit depth (8 or 16) of the PNG
+  output. It is independent of the internal BPG bit depth.
+
+4) BPG decoding library
+-----------------------
+
+BPG images can be decoded in any program with the libbpg
+library.
+
+The API is not considered stable yet so that the library is only
+provided as a static one.
+
+Currently there is no similar library for encoding so you should
+invoke the bpgenc utility.
+
+5) Javascript decoder
+---------------------
+
+bpgdec.js is a Javascript decoder supporting the BPG file
+format. bpgdec8b.js is a specialized version limited to BPG images
+using 8 bits per component. It is a little faster and consumes less
+memory (16 MB instead of 32 MB by default, you can change the memory
+configuration in the Makefile if you want to handle larger images).
+
+The Javascript decoder substitutes all the <img> tags with a source
+having a .bpg extension with a <canvas> tag and decodes the BPG image
+into it. Stylesheets are supported (the 'id' and 'class' attributes
+are preserved). The 'width' and 'height' attributes are supported only
+with pixel units.
+
+asm.js gives an interesting speed boost, so we hope that more browser
+will support this Javascript subset.
+
+6) FFmpeg modifications
+-----------------------
+
+- Completed support of chroma_format_idc = 0 (monochrome mode).
+
+- Fixed RDPCM support (intra predictions).
+
+- Reduced memory usage for the SAO loop filter.
+
+- Generated the IDCT coefficients dynamically to reduce the code size.
+
+- Added a 'dynamic bit depth' mode where all the bit depths from 8 to
+  14 are supported without code duplication but slower decoding.
+
+- Added a modified SPS header to reduce the size of the BPG decoder
+  (the solution instead is to generate standard VPS and SPS headers
+  from the BPG header).
+
+- Added defines to keep only the HEVC intra code and suppress the
+  parsing of all the irrelevant NAL units.
+
+- Stripped FFmpeg from all codecs except HEVC and the necessary
+  support code.
+
+7) Licensing
+------------
+
+- libbpg and bpgenc are released under the LGPL license (the FFmpeg
+  part is under the LGPL, the BPG specific part is released under the
+  BSD license).
+
+- bpgenc is released under the BSD license (it includes the JCTVC code
+  which is released under the BSD license. The BPG specific part is
+  released under the BSD license).
+
+- BPG relies on the HEVC compression technology which may be protected
+  by patents in some countries. Most devices already include or will
+  include hardware HEVC support, so we suggest to use it if patents
+  are an issue.
