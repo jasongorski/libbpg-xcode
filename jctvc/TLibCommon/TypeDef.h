@@ -286,7 +286,8 @@ typedef       void                Void;
 typedef       bool                Bool;
 
 #ifdef __arm__
-typedef       signed char         Char;
+typedef       char         Char; /* TODO Revisit. JJG */
+//typedef       signed char         Char;
 #else
 typedef       char                Char;
 #endif
