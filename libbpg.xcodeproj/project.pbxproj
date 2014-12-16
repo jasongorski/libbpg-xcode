@@ -159,6 +159,9 @@
 		265DAEF51A39A62C00BE1B3B /* log2_tab.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADBF1A399EBA00BE1B3B /* log2_tab.c */; };
 		265DAEF61A39A63600BE1B3B /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADC31A399EBA00BE1B3B /* md5.c */; };
 		265DAEF71A39A63700BE1B3B /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADC31A399EBA00BE1B3B /* md5.c */; };
+		2697E6C61A4098070092DC9B /* golomb.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD6F1A399EBA00BE1B3B /* golomb.c */; };
+		2697E6C71A4098080092DC9B /* golomb.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD6F1A399EBA00BE1B3B /* golomb.c */; };
+		2697E6C81A4098090092DC9B /* golomb.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD6F1A399EBA00BE1B3B /* golomb.c */; };
 		26A225C51A3A1A08008D8663 /* jctvc_glue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD631A399EBA00BE1B3B /* jctvc_glue.cpp */; };
 		26A225C61A3A1ABD008D8663 /* NALwrite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD381A399EBA00BE1B3B /* NALwrite.cpp */; };
 		26A225C71A3A1ABD008D8663 /* SEIwrite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD3A1A399EBA00BE1B3B /* SEIwrite.cpp */; };
@@ -1490,6 +1493,7 @@
 				265DAE951A39A4FF00BE1B3B /* TComSlice.cpp in Sources */,
 				265DAEED1A39A61000BE1B3B /* hevc_mvs.c in Sources */,
 				265DAE891A39A4FF00BE1B3B /* TComLoopFilter.cpp in Sources */,
+				2697E6C61A4098070092DC9B /* golomb.c in Sources */,
 				265DAEF41A39A62B00BE1B3B /* log2_tab.c in Sources */,
 				265DAE621A39A44200BE1B3B /* TEncPic.cpp in Sources */,
 				265DAE661A39A44200BE1B3B /* TEncSbac.cpp in Sources */,
@@ -1582,6 +1586,7 @@
 				265DAE7D1A39A44300BE1B3B /* WeightPredAnalysis.cpp in Sources */,
 				265DAEA81A39A50100BE1B3B /* TComPicYuv.cpp in Sources */,
 				265DAE3B1A39A29500BE1B3B /* pixdesc.c in Sources */,
+				2697E6C71A4098080092DC9B /* golomb.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1668,6 +1673,7 @@
 				26A2260B1A3A1E24008D8663 /* hevc.c in Sources */,
 				26A226151A3A1E4B008D8663 /* buffer.c in Sources */,
 				26A226141A3A1E24008D8663 /* utils.c in Sources */,
+				2697E6C81A4098090092DC9B /* golomb.c in Sources */,
 				26A226081A3A1DAA008D8663 /* bpgdec.c in Sources */,
 				26A2261A1A3A1E4B008D8663 /* pixdesc.c in Sources */,
 				26A226121A3A1E24008D8663 /* hevcdsp.c in Sources */,
