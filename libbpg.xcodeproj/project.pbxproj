@@ -238,6 +238,25 @@
 		26A2261B1A3A1E57008D8663 /* libbpg.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADE91A399EBA00BE1B3B /* libbpg.c */; };
 		26A2261E1A3A1FCB008D8663 /* liblibbpgenc_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 265DAE161A399FCC00BE1B3B /* liblibbpgenc_ios.a */; };
 		26A226251A3AF82B008D8663 /* test.bpg in Resources */ = {isa = PBXBuildFile; fileRef = 26A226241A3AF82B008D8663 /* test.bpg */; };
+		26ECDFBC1A4888500092EE5C /* frame.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADB11A399EBA00BE1B3B /* frame.c */; };
+		26ECDFBD1A4888500092EE5C /* log2_tab.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADBF1A399EBA00BE1B3B /* log2_tab.c */; };
+		26ECDFBE1A4888B00092EE5C /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD9B1A399EBA00BE1B3B /* buffer.c */; };
+		26ECDFBF1A4888B00092EE5C /* mem.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADC51A399EBA00BE1B3B /* mem.c */; };
+		26ECDFC01A4888CC0092EE5C /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADC31A399EBA00BE1B3B /* md5.c */; };
+		26ECDFC11A4888E30092EE5C /* libbpg.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADE91A399EBA00BE1B3B /* libbpg.c */; };
+		26ECDFC21A48894D0092EE5C /* cabac.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD6A1A399EBA00BE1B3B /* cabac.c */; };
+		26ECDFC31A48894D0092EE5C /* hevc_sei.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD791A399EBA00BE1B3B /* hevc_sei.c */; };
+		26ECDFC41A4889710092EE5C /* hevc_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD741A399EBA00BE1B3B /* hevc_filter.c */; };
+		26ECDFC51A4889710092EE5C /* hevc_ps.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD771A399EBA00BE1B3B /* hevc_ps.c */; };
+		26ECDFC61A4889710092EE5C /* hevc_refs.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD781A399EBA00BE1B3B /* hevc_refs.c */; };
+		26ECDFC71A488A270092EE5C /* golomb.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD6F1A399EBA00BE1B3B /* golomb.c */; };
+		26ECDFC81A488A270092EE5C /* hevc.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD711A399EBA00BE1B3B /* hevc.c */; };
+		26ECDFC91A488A270092EE5C /* hevc_cabac.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD731A399EBA00BE1B3B /* hevc_cabac.c */; };
+		26ECDFCA1A488A270092EE5C /* hevc_mvs.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD751A399EBA00BE1B3B /* hevc_mvs.c */; };
+		26ECDFCB1A488A270092EE5C /* hevcdsp.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD7A1A399EBA00BE1B3B /* hevcdsp.c */; };
+		26ECDFCC1A488A270092EE5C /* hevcpred.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD7D1A399EBA00BE1B3B /* hevcpred.c */; };
+		26ECDFCD1A488A270092EE5C /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD861A399EBA00BE1B3B /* utils.c */; };
+		26ECDFD81A489AF80092EE5C /* pixdesc.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADCF1A399EBA00BE1B3B /* pixdesc.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -612,6 +631,7 @@
 		26A225FB1A3A1D6D008D8663 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjpeg.a; path = ../../../../opt/homebrew/Cellar/jpeg/8d/lib/libjpeg.a; sourceTree = "<group>"; };
 		26A226011A3A1D9B008D8663 /* bpgdec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bpgdec; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A226241A3AF82B008D8663 /* test.bpg */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.bpg; sourceTree = "<group>"; };
+		26ECDFB71A4887B70092EE5C /* liblibbpgdec.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibbpgdec.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -678,6 +698,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		26ECDFB41A4887B70092EE5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -710,6 +737,7 @@
 				265DAE201A399FCD00BE1B3B /* libbpgenc_iosTests.xctest */,
 				265DAEFC1A39A79400BE1B3B /* bpgenc */,
 				26A226011A3A1D9B008D8663 /* bpgdec */,
+				26ECDFB71A4887B70092EE5C /* liblibbpgdec.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1158,6 +1186,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		26ECDFB51A4887B70092EE5C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -1305,6 +1340,23 @@
 			productReference = 26A226011A3A1D9B008D8663 /* bpgdec */;
 			productType = "com.apple.product-type.tool";
 		};
+		26ECDFB61A4887B70092EE5C /* libbpgdec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26ECDFBA1A4887B70092EE5C /* Build configuration list for PBXNativeTarget "libbpgdec" */;
+			buildPhases = (
+				26ECDFB31A4887B70092EE5C /* Sources */,
+				26ECDFB41A4887B70092EE5C /* Frameworks */,
+				26ECDFB51A4887B70092EE5C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libbpgdec;
+			productName = libbpgdec;
+			productReference = 26ECDFB71A4887B70092EE5C /* liblibbpgdec.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1340,6 +1392,9 @@
 					26A226001A3A1D9B008D8663 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
+					26ECDFB61A4887B70092EE5C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 				};
 			};
 			buildConfigurationList = 261FE6A21A399CA000483851 /* Build configuration list for PBXProject "libbpg" */;
@@ -1363,6 +1418,7 @@
 				265DAE1F1A399FCD00BE1B3B /* libbpgenc_iosTests */,
 				265DAEFB1A39A79400BE1B3B /* bpgenc */,
 				26A226001A3A1D9B008D8663 /* bpgdec */,
+				26ECDFB61A4887B70092EE5C /* libbpgdec */,
 			);
 		};
 /* End PBXProject section */
@@ -1680,6 +1736,32 @@
 				26A226181A3A1E4B008D8663 /* md5.c in Sources */,
 				26A2260E1A3A1E24008D8663 /* hevc_mvs.c in Sources */,
 				26A2260C1A3A1E24008D8663 /* hevc_cabac.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26ECDFB31A4887B70092EE5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26ECDFD81A489AF80092EE5C /* pixdesc.c in Sources */,
+				26ECDFC71A488A270092EE5C /* golomb.c in Sources */,
+				26ECDFC81A488A270092EE5C /* hevc.c in Sources */,
+				26ECDFC91A488A270092EE5C /* hevc_cabac.c in Sources */,
+				26ECDFCA1A488A270092EE5C /* hevc_mvs.c in Sources */,
+				26ECDFCB1A488A270092EE5C /* hevcdsp.c in Sources */,
+				26ECDFCC1A488A270092EE5C /* hevcpred.c in Sources */,
+				26ECDFCD1A488A270092EE5C /* utils.c in Sources */,
+				26ECDFC41A4889710092EE5C /* hevc_filter.c in Sources */,
+				26ECDFC51A4889710092EE5C /* hevc_ps.c in Sources */,
+				26ECDFC61A4889710092EE5C /* hevc_refs.c in Sources */,
+				26ECDFC21A48894D0092EE5C /* cabac.c in Sources */,
+				26ECDFC31A48894D0092EE5C /* hevc_sei.c in Sources */,
+				26ECDFC11A4888E30092EE5C /* libbpg.c in Sources */,
+				26ECDFC01A4888CC0092EE5C /* md5.c in Sources */,
+				26ECDFBE1A4888B00092EE5C /* buffer.c in Sources */,
+				26ECDFBF1A4888B00092EE5C /* mem.c in Sources */,
+				26ECDFBC1A4888500092EE5C /* frame.c in Sources */,
+				26ECDFBD1A4888500092EE5C /* log2_tab.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2134,6 +2216,41 @@
 			};
 			name = Release;
 		};
+		26ECDFB81A4887B70092EE5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					.,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		26ECDFB91A4887B70092EE5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					.,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2217,6 +2334,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		26ECDFBA1A4887B70092EE5C /* Build configuration list for PBXNativeTarget "libbpgdec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26ECDFB81A4887B70092EE5C /* Debug */,
+				26ECDFB91A4887B70092EE5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
