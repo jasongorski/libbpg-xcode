@@ -220,6 +220,9 @@
 		26A226091A3A1DD0008D8663 /* libpng16.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A225F91A3A1D00008D8663 /* libpng16.a */; };
 		26A2261E1A3A1FCB008D8663 /* liblibbpgenc_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 265DAE161A399FCC00BE1B3B /* liblibbpgenc_ios.a */; };
 		26A226251A3AF82B008D8663 /* test.bpg in Resources */ = {isa = PBXBuildFile; fileRef = 26A226241A3AF82B008D8663 /* test.bpg */; };
+		26BAA7941A64370E004CB671 /* videodsp.c in Sources */ = {isa = PBXBuildFile; fileRef = 26BAA7931A64370E004CB671 /* videodsp.c */; };
+		26BAA7951A64370E004CB671 /* videodsp.c in Sources */ = {isa = PBXBuildFile; fileRef = 26BAA7931A64370E004CB671 /* videodsp.c */; };
+		26BAA7961A64370E004CB671 /* videodsp.c in Sources */ = {isa = PBXBuildFile; fileRef = 26BAA7931A64370E004CB671 /* videodsp.c */; };
 		26ECDFBC1A4888500092EE5C /* frame.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADB11A399EBA00BE1B3B /* frame.c */; };
 		26ECDFBD1A4888500092EE5C /* log2_tab.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DADBF1A399EBA00BE1B3B /* log2_tab.c */; };
 		26ECDFBE1A4888B00092EE5C /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 265DAD9B1A399EBA00BE1B3B /* buffer.c */; };
@@ -470,7 +473,6 @@
 		265DAD611A399EBA00BE1B3B /* TVideoIOYuv.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TVideoIOYuv.cpp; sourceTree = "<group>"; };
 		265DAD621A399EBA00BE1B3B /* TVideoIOYuv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVideoIOYuv.h; sourceTree = "<group>"; };
 		265DAD631A399EBA00BE1B3B /* jctvc_glue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = jctvc_glue.cpp; sourceTree = "<group>"; };
-		265DAD651A399EBA00BE1B3B /* allcodecs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = allcodecs.c; sourceTree = "<group>"; };
 		265DAD661A399EBA00BE1B3B /* avcodec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		265DAD671A399EBA00BE1B3B /* bit_depth_template.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bit_depth_template.c; sourceTree = "<group>"; };
 		265DAD681A399EBA00BE1B3B /* bswapdsp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bswapdsp.h; sourceTree = "<group>"; };
@@ -487,7 +489,6 @@
 		265DAD731A399EBA00BE1B3B /* hevc_cabac.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hevc_cabac.c; sourceTree = "<group>"; };
 		265DAD741A399EBA00BE1B3B /* hevc_filter.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hevc_filter.c; sourceTree = "<group>"; };
 		265DAD751A399EBA00BE1B3B /* hevc_mvs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hevc_mvs.c; sourceTree = "<group>"; };
-		265DAD761A399EBA00BE1B3B /* hevc_parser.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hevc_parser.c; sourceTree = "<group>"; };
 		265DAD771A399EBA00BE1B3B /* hevc_ps.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hevc_ps.c; sourceTree = "<group>"; };
 		265DAD781A399EBA00BE1B3B /* hevc_refs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hevc_refs.c; sourceTree = "<group>"; };
 		265DAD791A399EBA00BE1B3B /* hevc_sei.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hevc_sei.c; sourceTree = "<group>"; };
@@ -620,6 +621,7 @@
 		26A225FB1A3A1D6D008D8663 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjpeg.a; path = ../../../../opt/homebrew/Cellar/jpeg/8d/lib/libjpeg.a; sourceTree = "<group>"; };
 		26A226011A3A1D9B008D8663 /* bpgdec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bpgdec; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A226241A3AF82B008D8663 /* test.bpg */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.bpg; sourceTree = "<group>"; };
+		26BAA7931A64370E004CB671 /* videodsp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = videodsp.c; sourceTree = "<group>"; };
 		26ECDFB71A4887B70092EE5C /* liblibbpgdec.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibbpgdec.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -950,7 +952,7 @@
 		265DAD641A399EBA00BE1B3B /* libavcodec */ = {
 			isa = PBXGroup;
 			children = (
-				265DAD651A399EBA00BE1B3B /* allcodecs.c */,
+				26BAA7931A64370E004CB671 /* videodsp.c */,
 				265DAD661A399EBA00BE1B3B /* avcodec.h */,
 				265DAD671A399EBA00BE1B3B /* bit_depth_template.c */,
 				265DAD681A399EBA00BE1B3B /* bswapdsp.h */,
@@ -967,7 +969,6 @@
 				265DAD731A399EBA00BE1B3B /* hevc_cabac.c */,
 				265DAD741A399EBA00BE1B3B /* hevc_filter.c */,
 				265DAD751A399EBA00BE1B3B /* hevc_mvs.c */,
-				265DAD761A399EBA00BE1B3B /* hevc_parser.c */,
 				265DAD771A399EBA00BE1B3B /* hevc_ps.c */,
 				265DAD781A399EBA00BE1B3B /* hevc_refs.c */,
 				265DAD791A399EBA00BE1B3B /* hevc_sei.c */,
@@ -1522,6 +1523,7 @@
 				265DAEEB1A39A61000BE1B3B /* hevc_cabac.c in Sources */,
 				265DAE5F1A39A44200BE1B3B /* TEncCu.cpp in Sources */,
 				265DAE321A39A11500BE1B3B /* frame.c in Sources */,
+				26BAA7941A64370E004CB671 /* videodsp.c in Sources */,
 				265DAEEF1A39A61000BE1B3B /* hevc_refs.c in Sources */,
 				265DAE8A1A39A4FF00BE1B3B /* TComMotionInfo.cpp in Sources */,
 				265DAE841A39A4FF00BE1B3B /* TComBitStream.cpp in Sources */,
@@ -1564,6 +1566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				265DAEF51A39A62C00BE1B3B /* log2_tab.c in Sources */,
+				26BAA7951A64370E004CB671 /* videodsp.c in Sources */,
 				265DAE7A1A39A44300BE1B3B /* TEncSearch.cpp in Sources */,
 				265DAEE51A39A60E00BE1B3B /* hevc_sei.c in Sources */,
 				265DAEAF1A39A50100BE1B3B /* TComSlice.cpp in Sources */,
@@ -1728,6 +1731,7 @@
 				26ECDFC61A4889710092EE5C /* hevc_refs.c in Sources */,
 				26ECDFC21A48894D0092EE5C /* cabac.c in Sources */,
 				26ECDFC31A48894D0092EE5C /* hevc_sei.c in Sources */,
+				26BAA7961A64370E004CB671 /* videodsp.c in Sources */,
 				26ECDFC11A4888E30092EE5C /* libbpg.c in Sources */,
 				26ECDFC01A4888CC0092EE5C /* md5.c in Sources */,
 				26ECDFBE1A4888B00092EE5C /* buffer.c in Sources */,
@@ -1818,11 +1822,15 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
+					USE_PRED,
+					HAVE_AV_CONFIG_H,
+					_ISOC99_SOURCE,
+					"_GNU_SOURCE=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -1869,7 +1877,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NDEBUG=1",
+					USE_PRED,
+					HAVE_AV_CONFIG_H,
+					_ISOC99_SOURCE,
+					"_GNU_SOURCE=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1895,10 +1911,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = "libbpg demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1923,10 +1935,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "libbpg demoTests/Info.plist";
@@ -1958,10 +1966,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -2004,10 +2008,6 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = libbpgdec_iosTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2032,10 +2032,6 @@
 		265DAE281A399FCD00BE1B3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -2070,10 +2066,6 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = libbpgenc_iosTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2096,10 +2088,6 @@
 		265DAF011A39A79400BE1B3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -2153,10 +2141,6 @@
 		26A226061A3A1D9B008D8663 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -2197,10 +2181,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
